@@ -16,11 +16,13 @@ public class PlayerController : MonoBehaviour
 
     public Mode mode = Mode.Generate;
 
-    public float interval = 1f;
+    public float interval = 0.1f;
 
     public GameObject ballPrefab;
 
-    float intervalTime = 1f;
+    float intervalTime = 0f;
+
+    public GameObject target;
 
     private Rigidbody Rigidbody;
     // Use this for initialization
@@ -74,11 +76,19 @@ public class PlayerController : MonoBehaviour
         var ball = Instantiate(ballPrefab, transform.position, Quaternion.identity);
         var bc = ball.GetComponent<BallController>();
 
+        float distance = (target.transform.position - transform.position).magnitude;
+
         bc.force = force;
+        bc.distance = distance;
 
         var f = (force + 0.3f) * 300;
 
         bc.transform.position = transform.position + new Vector3(0, 0.5f, 0);
         ball.GetComponent<Rigidbody>().AddForce(new Vector3(-f, f, 0));
+
+        var posX = Random.Range(-3f, 6f);
+        var pos = transform.position;
+        pos.x = posX;
+        transform.position = pos;
     }
 }

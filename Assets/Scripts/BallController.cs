@@ -29,7 +29,7 @@ public class BallController : MonoBehaviour
         {
             if (hasTrigger1)
             {
-                GetComponent<Renderer>().material = MaterialBallScored;
+                OnScored();
             }
         }
 
@@ -45,5 +45,11 @@ public class BallController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnScored()
+    {
+        GetComponent<Renderer>().material = MaterialBallScored;
+        Debug.Log(distance + "," + force);
     }
 }

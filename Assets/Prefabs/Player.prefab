@@ -111,6 +111,7 @@ MonoBehaviour:
   interval: 1
   ballPrefab: {fileID: 4362042495722102423, guid: 347ace64110ee41408a51651b9509856,
     type: 3}
+  target: {fileID: 0}
 --- !u!54 &6358387257417797327
 Rigidbody:
   m_ObjectHideFlags: 0
