@@ -31,7 +31,6 @@ public class StaticMgr
 
     public string Percent()
     {
-        UnityEngine.Debug.Log("" + score + ":" + shoot);
         if (shoot == 0)
         {
             return "0%";

@@ -56,7 +56,7 @@ public class BallController : MonoBehaviour
         StaticMgr.instance.ScoreAddOne();
         GetComponent<Renderer>().material = MaterialBallScored;
         string info = distance + "," + force;
-        Debug.Log(info);
+        Debug.Log("score");
 
         WriteInfo(info);
     }
