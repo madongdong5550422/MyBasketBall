@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 0
   distance: 0
+  MaterialBallScored: {fileID: 2100000, guid: c65571fa8d64a468bb31bec31415fbfe, type: 2}
