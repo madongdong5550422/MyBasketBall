@@ -86,6 +86,8 @@ public class PlayerController : MonoBehaviour
         bc.transform.position = transform.position + new Vector3(0, 0.5f, 0);
         ball.GetComponent<Rigidbody>().AddForce(new Vector3(-f, f, 0));
 
+        StaticMgr.instance.ShootAddOne();
+
         var posX = Random.Range(-3f, 6f);
         var pos = transform.position;
         pos.x = posX;
