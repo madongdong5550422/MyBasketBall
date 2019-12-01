@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 
 public class BallController : MonoBehaviour
 {
@@ -50,6 +54,15 @@ public class BallController : MonoBehaviour
     void OnScored()
     {
         GetComponent<Renderer>().material = MaterialBallScored;
-        Debug.Log(distance + "," + force);
+        string info = distance + "," + force;
+        Debug.Log(info);
+
+        WriteInfo(info);
     }
+
+    void WriteInfo(string info)
+    {
+        File.AppendAllText("successful_shots.csv", info += "\n");
+    }
+
 }
