@@ -86,7 +86,14 @@ public class PlayerController : MonoBehaviour
         var f = (force + 0.3f) * 300;
 
         bc.transform.position = transform.position + new Vector3(0, 0.5f, 0);
-        ball.GetComponent<Rigidbody>().AddForce(new Vector3(-f, f, 0));
+
+        Vector3 direct = target.transform.position - transform.position;
+        direct.z = Mathf.Sqrt(direct.x * direct.x + direct.y + direct.y);
+
+        Vector3 forceDir = Mathf.Sqrt(f * f + f * f) * direct.normalized;
+
+        //ball.GetComponent<Rigidbody>().AddForce(new Vector3(-f, f, 0));
+        ball.GetComponent<Rigidbody>().AddForce(forceDir);
 
         StaticMgr.instance.ShootAddOne();
 
