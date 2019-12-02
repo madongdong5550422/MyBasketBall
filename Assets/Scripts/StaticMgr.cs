@@ -36,8 +36,8 @@ public class StaticMgr
             return "0%";
         }
 
-        int per = (int)(100.0 * score / shoot);
-        string s = string.Format(per + "%");
+        float per = 100.0f * score / shoot;
+        string s = String.Format("{0:0.00}%", per);
         return s;
     }
 
