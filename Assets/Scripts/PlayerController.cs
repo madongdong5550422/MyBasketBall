@@ -56,27 +56,29 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
+        float distance = (target.transform.position - transform.position).magnitude;
+        float force = 0f;
         switch (mode)
         {
             case Mode.None:
                 break;
             case Mode.Generate:
-                float force = Random.Range(0.1f, 1.0f);
-                Shoot(force);
+                force = Random.Range(0.1f, 1.0f);
+                Shoot(force, distance);
                 break;
             case Mode.Test:
+                force = AIMgr.instance.GetForceForDistance(distance);
+                Shoot(force, distance);
                 break;
             default:
                 break;
         }
     }
 
-    void Shoot(float force)
+    void Shoot(float force, float distance)
     {
         var ball = Instantiate(ballPrefab, transform.position, Quaternion.identity);
         var bc = ball.GetComponent<BallController>();
-
-        float distance = (target.transform.position - transform.position).magnitude;
 
         bc.force = force;
         bc.distance = distance;
