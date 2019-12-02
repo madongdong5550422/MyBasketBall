@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         bc.transform.position = transform.position + new Vector3(0, 0.5f, 0);
 
         Vector3 direct = target.transform.position - transform.position;
-        direct.z = Mathf.Sqrt(direct.x * direct.x + direct.y + direct.y);
+        direct.y = Mathf.Sqrt(direct.x * direct.x + direct.z + direct.z);
 
         Vector3 forceDir = Mathf.Sqrt(f * f + f * f) * direct.normalized;
 
@@ -97,9 +97,12 @@ public class PlayerController : MonoBehaviour
 
         StaticMgr.instance.ShootAddOne();
 
-        var posX = Random.Range(-3f, 6f);
-        var pos = transform.position;
-        pos.x = posX;
-        transform.position = pos;
+        if (mode == Mode.Generate)
+        {
+            var posX = Random.Range(-3f, 6f);
+            var pos = transform.position;
+            pos.x = posX;
+            transform.position = pos;
+        }
     }
 }
