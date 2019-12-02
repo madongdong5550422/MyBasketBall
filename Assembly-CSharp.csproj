@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AIMgr.cs" />
     <Compile Include="Assets\Scripts\BallController.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\PercentController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\StaticMgr.cs" />
