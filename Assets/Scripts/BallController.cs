@@ -22,7 +22,7 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DoDespawn(5));
+        StartCoroutine(DoDespawn(3));
     }
 
     public void OnTriggerEnter(Collider other)
