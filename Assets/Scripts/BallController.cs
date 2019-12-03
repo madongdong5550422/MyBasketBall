@@ -18,6 +18,7 @@ public class BallController : MonoBehaviour
     public Material MaterialBallScored;
 
     private bool hasTrigger1 = false;
+    private bool hasTrigger2 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +35,11 @@ public class BallController : MonoBehaviour
 
         if (other.name == "Trigger02")
         {
-            if (hasTrigger1)
+            if (hasTrigger1 && hasTrigger2 == false)
             {
                 OnScored();
             }
+            hasTrigger2 = true;
         }
 
     }
@@ -66,7 +68,7 @@ public class BallController : MonoBehaviour
 
     void WriteInfo(string info)
     {
-        File.AppendAllText("successful_shots.csv", info += "\n");
+        File.AppendAllText("successful_shots_2d.csv", info += "\n");
     }
 
 }
