@@ -12,6 +12,9 @@ public class BallController : MonoBehaviour
 
     public float distance;
 
+    public float xPos;
+    public float zPos;
+
     public Material MaterialBallScored;
 
     private bool hasTrigger1 = false;
@@ -19,7 +22,7 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DoDespawn(10));
+        StartCoroutine(DoDespawn(5));
     }
 
     public void OnTriggerEnter(Collider other)
@@ -55,7 +58,7 @@ public class BallController : MonoBehaviour
     {
         StaticMgr.instance.ScoreAddOne();
         GetComponent<Renderer>().material = MaterialBallScored;
-        string info = distance + "," + force;
+        string info = xPos + "," + zPos + "," + force;
         Debug.Log("score");
 
         WriteInfo(info);

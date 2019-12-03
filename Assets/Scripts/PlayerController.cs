@@ -81,7 +81,8 @@ public class PlayerController : MonoBehaviour
         var bc = ball.GetComponent<BallController>();
 
         bc.force = force;
-        bc.distance = distance;
+        bc.xPos = transform.position.x;
+        bc.zPos = transform.position.z;
 
         var f = (force + 0.3f) * 300;
 
@@ -99,9 +100,11 @@ public class PlayerController : MonoBehaviour
 
         if (mode == Mode.Generate)
         {
-            var posX = Random.Range(-3f, 6f);
+            var posX = Random.Range(-5f, 6f);
+            var posZ = Random.Range(-5f, 5f);
             var pos = transform.position;
             pos.x = posX;
+            pos.z = posZ;
             transform.position = pos;
         }
     }
