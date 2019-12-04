@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
         switch (mode)
         {
             case Mode.None:
+                force = 0.5f;
+                Shoot(force, distance);
                 break;
             case Mode.Generate:
                 force = Random.Range(0.1f, 1.0f);
