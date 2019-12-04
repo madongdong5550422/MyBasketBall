@@ -16,6 +16,8 @@ public class BallController : MonoBehaviour
 
     private bool hasTrigger1 = false;
 
+    private bool hasTrigger2 = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +33,11 @@ public class BallController : MonoBehaviour
 
         if (other.name == "Trigger02")
         {
-            if (hasTrigger1)
+            if (hasTrigger1 && hasTrigger2 == false)
             {
                 OnScored();
             }
+            hasTrigger2 = true;
         }
 
     }
