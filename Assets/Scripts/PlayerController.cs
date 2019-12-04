@@ -67,7 +67,8 @@ public class PlayerController : MonoBehaviour
                 Shoot(force, distance);
                 break;
             case Mode.Test:
-                force = AIMgr.instance.GetForceForDistance(distance);
+                //force = AIMgr.instance.GetForceForDistance(distance);
+                force = AIMgr.instance.GetForceForPos(transform.position.x, transform.position.z);
                 Shoot(force, distance);
                 break;
             default:

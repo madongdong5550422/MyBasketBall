@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   mode: 1
-  interval: 0.01
+  interval: 1
   ballPrefab: {fileID: 4362042495722102423, guid: 347ace64110ee41408a51651b9509856,
     type: 3}
   target: {fileID: 0}
